@@ -25,6 +25,8 @@ nginxVersion: '1.12'
 ngBuildProd:
   useBuildProdFlags: false
   buildProdFlags:  --aot=false --build-optimizer
+  useSpecificOutputPath: true
+  buildSpecificOutputPath: /dist
 
 environmentVariables:
   environmentVariable1: value1
