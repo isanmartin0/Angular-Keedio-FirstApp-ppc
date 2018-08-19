@@ -23,7 +23,7 @@ angularCli:
 nginxVersion: '1.12'
 
 ngBuildProd:
-  useBuildProdFlags: true
+  useBuildProdFlags: false
   buildProdFlags:  --aot=false --build-optimizer
 
 environmentVariables:
