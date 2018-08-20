@@ -16,7 +16,7 @@ showInstalledDependencies:
   showLocalInstalledDependenciesType: dev
 
 angularCli:
-  installGloballyAngularCli: true
+  installGloballyAngularCli: false
   installAngularCliSpecificVersion: false
   angularCliVersion: 6.1.0
 
