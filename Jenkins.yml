@@ -24,7 +24,7 @@ nginxVersion: '1.12'
 
 ngBuildProd:
   useBuildProdFlags: true
-  buildProdFlags:  --aot=false --build-optimizer
+  buildProdFlags:  --unknownFlag --build-optimizer
   useSpecificOutputPath: true
   buildSpecificOutputPath: /dist
 
