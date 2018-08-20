@@ -23,7 +23,7 @@ angularCli:
 nginxVersion: '1.12'
 
 ngBuildProd:
-  useBuildProdFlags: false
+  useBuildProdFlags: true
   buildProdFlags:  --aot=false --build-optimizer
   useSpecificOutputPath: true
   buildSpecificOutputPath: /dist
