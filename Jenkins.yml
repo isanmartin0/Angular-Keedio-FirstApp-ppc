@@ -3,7 +3,7 @@ openshift:
 
 imageStreamNodejsVersion: 10
 
-removeSourcePackageLock: false
+removeSourcePackageLock: true
 
 showInstalledDependencies:
   showGlobalInstalledDependencies: true
