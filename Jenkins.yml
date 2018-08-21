@@ -38,7 +38,7 @@ confirmDeploy:
   - master
 
 timeoutConfirmDeploy: true
-timeoutConfirmDeployTime: 30
+timeoutConfirmDeployTime: 10
 timeoutConfirmDeployUnit: MINUTES
 
 testing:
