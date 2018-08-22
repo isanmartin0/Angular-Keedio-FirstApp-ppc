@@ -29,7 +29,7 @@ ngBuildProd:
   buildSpecificOutputPath: dist/Angular-Keedio-FirstApp/
 
 environmentVariables:
-  environmentVariable2: value2
+  # environmentVariable2: value2
 
 npmRegistryPublish:
   # - release
