@@ -25,7 +25,7 @@ nginxVersion: '1.12'
 ngBuildProd:
   useBuildProdFlags: true
   buildProdFlags: --build-optimizer
-  useSpecificOutputPath: true
+  useSpecificOutputPath: false
   buildSpecificOutputPath: dist/Angular-Keedio-FirstApp/
 
 environmentVariables:
