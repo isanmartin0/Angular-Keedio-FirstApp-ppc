@@ -20,10 +20,10 @@ angularCli:
   installAngularCliSpecificVersion: false
   angularCliVersion: 6.1.0
 
-nginxVersion: '1.10'
+nginxVersion: '1.12'
 
 ngBuildProd:
-  useBuildProdFlags: true
+  useBuildProdFlags: false
   buildProdFlags: --build-optimizer
   useSpecificOutputPath: true
   buildSpecificOutputPath: dist/Angular-Keedio-FirstApp/
@@ -43,46 +43,68 @@ timeoutConfirmDeployUnit: MINUTES
 
 testing:
   predeploy:
+    useLintingFlags: false
+    lintingFlags: --format json --force true
+    linting:
+      - feature
+      - develop
+      - release
+      - hotfix
+
     useUnitTestingFlags: false
     unitTestingFlags: --browsers ChromeHeadless --watch=false --code-coverage
     useUnitTestingKarmaConfigurationFileSpecificPath: false
-    unitTestingKarmaConfigurationFileSpecificPath: /
+    unitTestingKarmaConfigurationFileSpecificPath:
     unitTesting:
       - feature
       - develop
       - release
       - hotfix
-    sonarQube:
-      - feature
-      - develop
-      - release
-      - hotfix
+
     useE2ETestingFlags: false
     e2eTestingFlags:
     useE2ETestingProtractorConfigurationFileSpecificPath: false
-    e2eTestingProtractorConfigurationFileSpecificPath: /
+    e2eTestingProtractorConfigurationFileSpecificPath:
     e2eTesting:
       - feature
       - develop
       - release
       - hotfix
 
+    useKarmaSonarQubeReporterSpecificVersion: false
+    karmaSonarQubeReporterSpecificVersion: 1.2.0
+    sonarQube:
+      - feature
+      - develop
+      - release
+      - hotfix
+    sonarQubeAnalisis:
+      sonarSources: src
+      sonarExclusions: "**/node_modules/**,**/*.spec.ts"
+      sonarTests: e2e
+      sonarTestInclusions: "**/*.e2e-spec.ts,**/*.po.ts"
+      sonarTSTSLintConfigPath: tslint.json
+      sonarTypescriptExclusions: "**/node_modules/**,**/typings.d.ts,**/main.ts,**/environments/environment*.ts,**/*routing.module.ts"
+      sonarTestExecutionReportPath: reports/test-report.xml
+      sonarCoverageReportPath: coverage/lcov.info
+
+
   postdeploy:
     timeoutConfirmPostDeployTests: true
-    timeoutConfirmPostDeployTestsTime: 5
+    timeoutConfirmPostDeployTestsTime: 30
     timeoutConfirmPostDeployTestsUnit: MINUTES
     smokeTesting:
-      # - release
+      - release
       # - master
     securityTesting:
       # - develop
-      # - release
+      - release
     performanceTesting:
-      # - release
+      - release
       # - hotfix
     acceptanceTesting:
       # - develop
-      # - release
+      - release
 
 notifications:
   branch:
